@@ -3,18 +3,19 @@
 ## Attack Chain
 The 4 cases are linked as a single coordinated attack:
 
-Initial Access        Execution             Persistence            Impact
-4625 x6          →    4688                → 4720                 → 4723
-(Brute Force)         (Encoded PS)          (New Account)           (Password Change)
-     ↓                                           ↓                       ↓
-4740                                        4732                    4724
-(Lockout)                                   (Admin Group)           (Force Reset)
-     ↓                                           ↓                       ↓
-4624                                        4698                    4725
-(Success Login)                             (Scheduled Task)        (Disable)
-                                                                        ↓
-                                                                    4726
-                                                                    (Delete)
+| Phase            | Event ID | Description            |
+|------------------|---------|------------------------|
+| Initial Access   | 4625 x6 | Brute Force            |
+|                  | 4740    | Account Lockout        |
+|                  | 4624    | Success Login          |
+| Execution        | 4688    | Encoded PowerShell     |
+| Persistence      | 4720    | New Account            |
+|                  | 4732    | Add to Admin Group     |
+|                  | 4698    | Scheduled Task         |
+| Impact           | 4723    | Password Change        |
+|                  | 4724    | Force Reset            |
+|                  | 4725    | Disable Account        |
+|                  | 4726    | Delete Account         |
 
 <img width="1022" height="768" alt="image" src="https://github.com/user-attachments/assets/ec6da24b-e1b0-4b1b-8ea3-5ce1525794a1" />
 <img width="791" height="545" alt="image" src="https://github.com/user-attachments/assets/fa696df8-7c84-4d85-931a-a8345d21e414" />
