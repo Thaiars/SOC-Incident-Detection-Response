@@ -1,6 +1,4 @@
 # Suspicious PowerShell Simulation 
-
-
 auditpol /set /subcategory:"Process Creation" /success:enable /failure:enable
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" `
     /v ProcessCreationIncludeCmdLine_Enabled /t REG_DWORD /d 1 /f
